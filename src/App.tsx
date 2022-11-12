@@ -1,15 +1,17 @@
 import React from 'react';
-import logo from './logo.jpeg';
-import './App.css';
+import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
+import { RouteComponentProps } from './interfaces/index';
+import HomeScreen from './screens/HomeScreen';
+
+type TParams = { id?: string | undefined };
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className="texto">HACKATON ITSNCG</p>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomeScreen />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
